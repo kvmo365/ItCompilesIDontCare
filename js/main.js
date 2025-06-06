@@ -2,7 +2,7 @@
 
 // Load and display products from JSON
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("data/products.json")
+  fetch("/api/products")
     .then(response => response.json())
     .then(data => displayProducts(data))
     .catch(error => console.error("Error loading products:", error));
