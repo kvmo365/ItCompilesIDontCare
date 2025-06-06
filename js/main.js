@@ -2,7 +2,7 @@
 
 // Load and display products from JSON
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("/api/products")
+  fetch("https://itcompilesidontcare-backend.onrender.com/api/products")
     .then(response => response.json())
     .then(data => displayProducts(data))
     .catch(error => console.error("Error loading products:", error));
