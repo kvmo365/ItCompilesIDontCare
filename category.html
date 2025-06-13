@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="favicon.ico" />
   <meta charset="UTF-8" />
   <title>Hologram Categories</title>
   <link rel="stylesheet" href="css/style.css" />
-  
+  <style>
+    .category-card.locked {
+      position: relative;
+      filter: blur(2px);
+    }
+    .locked-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--neon);
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: 2px solid var(--neon-dark);
+      box-shadow: 0 0 10px var(--neon);
+      cursor: pointer;
+      z-index: 2;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .locked-button:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 0 20px var(--neon);
+    }
+  </style>
 </head>
 <body>
 
@@ -13,38 +41,70 @@
   <div class="category-wrapper">
     <button class="nav-button nav-left" onclick="scrollCategories(-1)">&lt;</button>
     <div class="category-slider" id="categorySlider">
-      <a href="/tabootattoo.html" class="category-card">
-        <img src="images\tatto tabo.jpg" alt="Taboo Tattoo" />
+<<<<<<< HEAD
+      <a href="locked.html" class="category-card locked">
+=======
+      <a href="tabootattoo.html" class="category-card">
+>>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+        <img src="images/tatto tabo.jpg" alt="Taboo Tattoo" />
         <div class="category-name">Taboo Tattoo</div>
+        <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
       </a>
 
+<<<<<<< HEAD
       <a href="/devilfruits.html" class="category-card">
-        <img src="images\devil fruit.jpg" alt="Devil Fruit" />
+=======
+      <a href="devilfruits.html" class="category-card">
+>>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+        <img src="images/devil fruit.jpg" alt="Devil Fruit" />
         <div class="category-name">Devil Fruit</div>
       </a>
 
-      <a href="/tailedbeasts.html" class="category-card">
-        <img src="images\tailed beast.jpg" alt="Tailed Beast" />
+<<<<<<< HEAD
+      <a href="locked.html" class="category-card locked">
+=======
+      <a href="tailedbeasts.html" class="category-card">
+>>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+        <img src="images/tailed beast.jpg" alt="Tailed Beast" />
         <div class="category-name">Tailed Beast</div>
+        <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
       </a>
 
-      <a href="/saiyan.html" class="category-card">
-        <img src="images\syrum.jpg" alt="Sayan Transformation" />
+<<<<<<< HEAD
+      <a href="locked.html" class="category-card locked">
+=======
+      <a href="saiyan.html" class="category-card">
+>>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+        <img src="images/syrum.jpg" alt="Sayan Transformation" />
         <div class="category-name">Sayan Transformation</div>
+        <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
       </a>
 
-      <a href="/zanpakuto.html" class="category-card">
-        <img src="images\zanpaktoe.jpg" alt="Zanpaktuo" />
+<<<<<<< HEAD
+      <a href="locked.html" class="category-card locked">
+=======
+      <a href="zanpakuto.html" class="category-card">
+>>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+        <img src="images/zanpaktoe.jpg" alt="Zanpaktuo" />
         <div class="category-name">Zanpaktuo</div>
+        <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
       </a>
 
+<<<<<<< HEAD
       <a href="/demonslayer.html" class="category-card">
-        <img src="images\nichirin swords.jpg" alt="Nichirin Blades" />
+=======
+      <a href="demonslayer.html" class="category-card">
+>>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+        <img src="images/nichirin swords.jpg" alt="Nichirin Blades" />
         <div class="category-name">Nichirin Blades</div>
       </a>
 
+<<<<<<< HEAD
       <a href="/titans.html" class="category-card">
-        <img src="images\titain syrum.jpg" alt="Titan Serums" />
+=======
+      <a href="titans.html" class="category-card">
+>>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+        <img src="images/titain syrum.jpg" alt="Titan Serums" />
         <div class="category-name">Titan Serums</div>
       </a>
     </div>
@@ -84,6 +144,10 @@
     updateCardTransform();
   </script>
 
-  <script src="server\routes\auth.js"></script>
+<<<<<<< HEAD
+  <script src="server/routes/auth.js"></script>
 </body>
+=======
+  </body>
+>>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
 </html>

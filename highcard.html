@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="favicon.ico" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>High Card Suit Cards - MyAnimeVault</title>
-  <link rel="stylesheet" href="..\css\style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
     <h1>High Card Suit Cards</h1>
     <div class="user-info">
-      <a href="/login.html"><button>Login / Signup</button></a>
+      <a href="login.html"><button>Login / Signup</button></a>
     </div>
     <div class="hamburger">&#9776;</div>
   </header>
   <nav>
     <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/category.html">Categories</a></li>
-      <li><a href="/cart.html">Cart</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="category.html">Categories</a></li>
+      <li><a href="cart.html">Cart</a></li>
     </ul>
   </nav>
 
@@ -30,29 +31,7 @@
     <p>&copy; 2025 MyAnimeVault. All rights reserved.</p>
   </footer>
 
-  <script src="js\main.js"></script>
-  <script src="server\routes\products.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const list = document.getElementById("product-list");
-      const user = JSON.parse(localStorage.getItem("animeShopUser"));
-      const products = productsData.highcard;
-
-      products.forEach((p) => {
-        const card = document.createElement("div");
-        card.className = "product-card";
-        card.innerHTML = `
-          <h3>${p.name}</h3>
-          <img src="/images/highcard/${p.id}.jpg" alt="${p.name}" style="max-width:200px;" />
-          <!-- EDIT HERE: replace with your actual image path -->
-          <p>${p.description}</p>
-          <p><strong>Price:</strong> R ${p.price.toLocaleString()}</p>
-          <button onclick="addToCart('${user?.email || ""}', '${p.id}', 'highcard')">Add to Cart</button>
-        `;
-        list.appendChild(card);
-      });
-    });
-  </script>
-  <script src="server\routes\cart.js"></script>
-</body>
+  <script src="js/main.js"></script>
+  <!-- TODO: Fetch products from API and render -->
+  </body>
 </html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unlock Premium Categories</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; background: #111; color: #eee; padding: 20px; }
+    h1 { color: var(--neon); margin-bottom: 20px; }
+    .plan {
+      background: #222;
+      border: 2px solid var(--neon-dark);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+    .plan:hover { background: rgba(0,255,255,0.1); }
+    .plan.selected {
+      background: rgba(0,255,255,0.2);
+      border-color: var(--neon);
+      box-shadow: 0 0 15px var(--neon);
+    }
+    .plan h2 { margin: 0 0 10px 0; color: var(--neon); }
+    .plan ul { margin: 0 0 0 20px; padding: 0; }
+    #continueBtn { margin-top: 10px; }
+    #bank-details { display: none; margin-top: 20px; background: #222;
+      padding: 15px; border-radius: 8px; border: 2px solid var(--neon-dark); }
+    select, input { width: 100%; padding: 8px; margin-bottom: 12px;
+      border-radius: 4px; border: 1px solid #333; background: #111; color: #eee; }
+    button { background: var(--neon); color: #000; padding: 10px 16px;
+      border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+<h1>Choose Your Premium Plan</h1>
+<form id="unlockForm">
+  <!-- Plans -->
+  <div class="plan" data-plan="plan1">
+    <input type="radio" id="plan1" name="plan" value="plan1" hidden>
+    <h2>Plan 1: Apprentice Access — R1,200,000</h2>
+    <ul>
+      <li><strong>Unlocks:</strong> Taboo Tattoo</li>
+      <li><strong>Pros:</strong> Intro-level access</li>
+      <li><strong>Cons:</strong> Single category</li>
+    </ul>
+  </div>
+  <div class="plan" data-plan="plan2">
+    <input type="radio" id="plan2" name="plan" value="plan2" hidden>
+    <h2>Plan 2: Warrior Bundle — R3,500,000</h2>
+    <ul>
+      <li><strong>Unlocks:</strong> Taboo Tattoo, Tailed Beast, Sayan Transformation</li>
+      <li><strong>Pros:</strong> Multiple categories</li>
+      <li><strong>Cons:</strong> Excludes advanced categories</li>
+    </ul>
+  </div>
+  <div class="plan" data-plan="plan3">
+    <input type="radio" id="plan3" name="plan" value="plan3" hidden>
+    <h2>Plan 3: Legendary Collector — R7,800,000</h2>
+    <ul>
+      <li><strong>Unlocks:</strong> All except Titan Serums</li>
+      <li><strong>Pros:</strong> Extensive content</li>
+      <li><strong>Cons:</strong> High price</li>
+    </ul>
+  </div>
+  <div class="plan" data-plan="plan4">
+    <input type="radio" id="plan4" name="plan" value="plan4" hidden>
+    <h2>Plan 4: Ultimate Colossus — R15,000,000</h2>
+    <ul>
+      <li><strong>Unlocks:</strong> Every category</li>
+      <li><strong>Pros:</strong> Full access</li>
+      <li><strong>Cons:</strong> Premium cost</li>
+    </ul>
+  </div>
+  <!-- Continue to Payment -->
+  <button type="button" id="continueBtn">Continue to Payment</button>
+  <!-- Bank Details Form -->
+  <div id="bank-details">
+    <h2>Payment Details</h2>
+    <select id="bank-select" required>
+      <option value="">-- Select Bank --</option>
+      <option>Standard Bank</option>
+      <option>Capitec</option>
+      <option>Nedbank</option>
+      <option>ABSA</option>
+      <option>FNB</option>
+    </select>
+    <input type="text" id="account-number" placeholder="Account Number" maxlength="12" required />
+    <input type="text" id="security-code" placeholder="3-Digit Code" maxlength="3" required />
+    <button type="submit">Submit Payment</button>
+  </div>
+</form>
+<script>
+  // Plan selection and highlight
+  const plans = document.querySelectorAll('.plan');
+  plans.forEach(plan => {
+    plan.addEventListener('click', () => {
+      // Clear previous selection
+      plans.forEach(p => p.classList.remove('selected'));
+      // Highlight current
+      plan.classList.add('selected');
+      // Check corresponding radio
+      document.getElementById(plan.dataset.plan).checked = true;
+    });
+  });
+  // Show bank details on continue
+  document.getElementById('continueBtn').addEventListener('click', () => {
+    if (!document.querySelector('input[name="plan"]:checked')) {
+      return alert('Select a plan first');
+    }
+    document.getElementById('bank-details').style.display = 'block';
+    document.getElementById('continueBtn').style.display = 'none';
+  });
+  // Form submission handler
+  document.getElementById('unlockForm').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Processing payment...');
+  });
+</script>
+</body>
+</html>
