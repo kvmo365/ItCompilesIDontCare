@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="favicon.ico" />
   <meta charset="UTF-8" />
+  <link rel="icon" href="favicon.ico" />
   <title>Hologram Categories</title>
   <link rel="stylesheet" href="css/style.css" />
   <style>
@@ -19,7 +19,6 @@
       color: #000;
       padding: 12px 20px;
       border-radius: 12px;
-      text-decoration: none;
       font-weight: bold;
       font-size: 1.1rem;
       border: 2px solid var(--neon-dark);
@@ -35,75 +34,47 @@
   </style>
 </head>
 <body>
-
   <header>Choose Your Category</header>
 
   <div class="category-wrapper">
     <button class="nav-button nav-left" onclick="scrollCategories(-1)">&lt;</button>
     <div class="category-slider" id="categorySlider">
-<<<<<<< HEAD
-      <a href="locked.html" class="category-card locked">
-=======
-      <a href="tabootattoo.html" class="category-card">
->>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+      <!-- Taboo Tattoo (locked) -->
+      <a href="tabootattoo.html" class="category-card locked">
         <img src="images/tatto tabo.jpg" alt="Taboo Tattoo" />
         <div class="category-name">Taboo Tattoo</div>
         <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
       </a>
-
-<<<<<<< HEAD
-      <a href="/devilfruits.html" class="category-card">
-=======
+      <!-- Devil Fruit (unlocked) -->
       <a href="devilfruits.html" class="category-card">
->>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
         <img src="images/devil fruit.jpg" alt="Devil Fruit" />
         <div class="category-name">Devil Fruit</div>
       </a>
-
-<<<<<<< HEAD
-      <a href="locked.html" class="category-card locked">
-=======
-      <a href="tailedbeasts.html" class="category-card">
->>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+      <!-- Tailed Beast (locked) -->
+      <a href="tailedbeasts.html" class="category-card locked">
         <img src="images/tailed beast.jpg" alt="Tailed Beast" />
         <div class="category-name">Tailed Beast</div>
         <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
       </a>
-
-<<<<<<< HEAD
-      <a href="locked.html" class="category-card locked">
-=======
-      <a href="saiyan.html" class="category-card">
->>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+      <!-- Sayan Transformation (locked) -->
+      <a href="saiyan.html" class="category-card locked">
         <img src="images/syrum.jpg" alt="Sayan Transformation" />
         <div class="category-name">Sayan Transformation</div>
         <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
       </a>
-
-<<<<<<< HEAD
-      <a href="locked.html" class="category-card locked">
-=======
-      <a href="zanpakuto.html" class="category-card">
->>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
+      <!-- Zanpaktuo (locked) -->
+      <a href="zanpakuto.html" class="category-card locked">
         <img src="images/zanpaktoe.jpg" alt="Zanpaktuo" />
         <div class="category-name">Zanpaktuo</div>
         <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
       </a>
-
-<<<<<<< HEAD
-      <a href="/demonslayer.html" class="category-card">
-=======
+      <!-- Nichirin Blades (unlocked) -->
       <a href="demonslayer.html" class="category-card">
->>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
         <img src="images/nichirin swords.jpg" alt="Nichirin Blades" />
         <div class="category-name">Nichirin Blades</div>
       </a>
-
-<<<<<<< HEAD
-      <a href="/titans.html" class="category-card">
-=======
+      <!-- Titan Serums (unlocked) -->
       <a href="titans.html" class="category-card">
->>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
         <img src="images/titain syrum.jpg" alt="Titan Serums" />
         <div class="category-name">Titan Serums</div>
       </a>
@@ -113,7 +84,7 @@
 
   <script>
     let scrollIndex = 0;
-    const slider = document.getElementById("categorySlider");
+    const slider = document.getElementById('categorySlider');
     const cards = slider.children;
     const visibleCards = 3;
     const cardWidth = 260;
@@ -126,28 +97,22 @@
     }
 
     function updateCardTransform() {
-      for (let i = 0; i < cards.length; i++) {
+      Array.from(cards).forEach((card, i) => {
         const distance = i - scrollIndex - 1;
-        const card = cards[i];
         if (distance < -2 || distance > 2) {
-          card.style.opacity = "0";
-          card.style.pointerEvents = "none";
-          card.style.transform = "scale(0.7) rotateY(20deg)";
+          card.style.opacity = '0';
+          card.style.pointerEvents = 'none';
+          card.style.transform = 'scale(0.7) rotateY(20deg)';
         } else {
-          card.style.opacity = "1";
-          card.style.pointerEvents = "auto";
+          card.style.opacity = '1';
+          card.style.pointerEvents = 'auto';
           card.style.transform = `scale(1) rotateY(${distance * 10}deg)`;
         }
-      }
+      });
     }
 
+    // Initialize
     updateCardTransform();
   </script>
-
-<<<<<<< HEAD
-  <script src="server/routes/auth.js"></script>
 </body>
-=======
-  </body>
->>>>>>> bb7ce5ac2eb2c736666021421112ce1c00f2d452
 </html>
