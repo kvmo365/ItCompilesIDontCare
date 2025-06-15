@@ -1,46 +1,65 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="favicon.ico" rel="icon"/>
-<meta charset="utf-8"/>
-<title>Nichirin Blades - Demon Slayer</title>
-<link href="css/style.css" rel="stylesheet"/>
+  <!-- Favicon and viewport settings -->
+  <link href="favicon.ico" rel="icon"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+  <!-- Page title -->
+  <title>Nichirin Blades - Demon Slayer</title>
+
+  <!-- External stylesheet -->
+  <link href="css/style.css" rel="stylesheet"/>
+
+  <!-- Inline grid styling for 3-column layout -->
+  
 </head>
 <body>
-<nav class="container">
-<a class="glitch" data-text="Home" href="index.html">Home</a>
-<a class="glitch" data-text="High Cards" href="highcards.html">High Cards</a>
-<a class="glitch" data-text="Taboo Tattoo" href="tabootattoo.html">Taboo Tattoo</a>
-<a class="glitch" data-text="Devil Fruit" href="devilfruit.html">Devil Fruit</a>
-<a class="glitch" data-text="Tailed Beasts" href="tailedbeasts.html">Tailed Beasts</a>
-<a class="glitch" data-text="Saiyan" href="sayan.html">Saiyan</a>
-<a class="glitch" data-text="Zanpaktuo" href="zanpaktuo.html">Zanpaktuo</a>
-<a class="glitch" data-text="Nichirin" href="demonslayer.html">Nichirin</a>
-<a class="glitch" data-text="Titans" href="titans.html">Titans</a>
-</nav>
-<h1>Nichirin Blades Collection</h1>
-<div class="product-list" id="product-list">
-<!-- Products will be inserted here by JS -->
-</div>
-<script>
+  <!-- Navigation bar with glitch effect links -->
+  <nav class="container">
+    <a class="glitch" data-text="Home" href="index.html">Home</a>
+    <a class="glitch" data-text="High Cards" href="highcards.html">High Cards</a>
+    <a class="glitch" data-text="Taboo Tattoo" href="tabootattoo.html">Taboo Tattoo</a>
+    <a class="glitch" data-text="Devil Fruit" href="devilfruit.html">Devil Fruit</a>
+    <a class="glitch" data-text="Tailed Beasts" href="tailedbeasts.html">Tailed Beasts</a>
+    <a class="glitch" data-text="Saiyan" href="sayan.html">Saiyan</a>
+    <a class="glitch" data-text="Zanpaktuo" href="zanpaktuo.html">Zanpaktuo</a>
+    <a class="glitch" data-text="Nichirin" href="demonslayer.html">Nichirin</a>
+    <a class="glitch" data-text="Titans" href="titans.html">Titans</a>
+  </nav>
+
+  <!-- Main heading for the blade collection -->
+  <h1>Nichirin Blades Collection</h1>
+
+  <!-- Product list container: JS will inject blade products here -->
+  <div class="product-list" id="product-list">
+    <!-- Products inserted by script -->
+  </div>
+
+  <!-- Inline script: fetch JSON, filter Nichirin category, and render cards -->
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
       const list = document.getElementById("product-list");
 
-      fetch("data/products.json") // 👈 fixed path
-        .then((res) => {
+      // Fetch all products from local JSON file
+      fetch("data/products.json")
+        .then(res => {
           if (!res.ok) throw new Error("Failed to fetch products");
           return res.json();
         })
-        .then((products) => {
-          const nichirinProducts = products.filter(p => p.category === "Nichirin Blades");
+        .then(products => {
+          // Filter only Nichirin Blades category
+          const nichirinBlades = products.filter(p => p.category === "Nichirin Blades");
 
-          if (nichirinProducts.length === 0) {
-            list.innerHTML = "<p>No products found in this category.</p>";
+          // Handle case with no matching products
+          if (nichirinBlades.length === 0) {
+            list.innerHTML = "<p>No Nichirin Blades available.</p>";
             return;
           }
 
-          nichirinProducts.forEach((p) => {
+          // Render each blade as a card
+          nichirinBlades.forEach(p => {
             const card = document.createElement("div");
             card.className = "product-card";
             card.innerHTML = `
@@ -52,18 +71,29 @@
             list.appendChild(card);
           });
         })
-        .catch((err) => {
-          console.error("Failed to load products:", err);
-          list.innerHTML = "<p>Failed to load products.</p>";
+        .catch(err => {
+          console.error("Error loading products:", err);
+          list.innerHTML = "<p>Unable to load products at this time.</p>";
         });
     });
 
+    /**
+     * Adds a product to the shopping cart.
+     * @param {string} productId - The unique ID of the product.
+     */
     function addToCart(productId) {
+      // TODO: Integrate with cart logic/storage
       alert("Added to cart: " + productId);
     }
   </script>
-<footer>
-<p>© 2025 Your Anime Store. All rights reserved.</p>
-</footer>
-<script defer="True" src="script.js"></script><script src="js/custom.js"></script></body>
+
+  <!-- Footer section -->
+  <footer>
+    <p>© 2025 Your Anime Store. All rights reserved.</p>
+  </footer>
+
+  <!-- External scripts: deferred and custom behaviors -->
+  <script defer src="script.js"></script>
+  <script src="js/custom.js"></script>
+</body>
 </html>
