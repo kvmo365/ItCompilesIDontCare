@@ -1,127 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
-/* Global Reset & Font */
+:root {
+  --neon: #0ff;
+  --neon-dark: #00b8cc;
+  --bg-gradient: linear-gradient(120deg, #0ff, #00f2ff, #007dff, #0ff);
+  --bg-radial: radial-gradient(ellipse at center, #0d0d0d 0%, #000000 100%);
+}
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: 'Orbitron', sans-serif;
-  background: #000;
-  color: #0ff;
-  line-height: 1.5;
+
+/* Apply glitch text-shadow animation to all text */
+body * {
+  animation: glitch 3s infinite;
 }
 
-/* Navbar */
+/* Keyframes for glitch effect */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px var(--neon), -2px -2px var(--neon-dark);
+  }
+  10% {
+    text-shadow: -2px -2px var(--neon), 2px 2px var(--neon-dark);
+  }
+  20% {
+    text-shadow: 2px 2px var(--neon), -2px -2px var(--neon-dark);
+  }
+  30% {
+    text-shadow: -2px -2px var(--neon), 2px 2px var(--neon-dark);
+  }
+  40% {
+    text-shadow: 2px 2px var(--neon), -2px -2px var(--neon-dark);
+  }
+  50% {
+    text-shadow: -2px -2px var(--neon), 2px 2px var(--neon-dark);
+  }
+  60% {
+    text-shadow: 2px 2px var(--neon), -2px -2px var(--neon-dark);
+  }
+  70% {
+    text-shadow: -2px -2px var(--neon), 2px 2px var(--neon-dark);
+  }
+  80% {
+    text-shadow: 2px 2px var(--neon), -2px -2px var(--neon-dark);
+  }
+  90% {
+    text-shadow: -2px -2px var(--neon), 2px 2px var(--neon-dark);
+  }
+  100% {
+    text-shadow: 2px 2px var(--neon), -2px -2px var(--neon-dark);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-radial);
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
 nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.8);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
+
 nav a {
+  position: relative;
   color: var(--neon);
   text-decoration: none;
-  margin: 0 1rem;
-  position: relative;
-  font-weight: bold;
+  font-size: 1.1rem;
 }
+
 nav a::after {
   content: '';
-  display: block;
+  position: absolute;
+  width: 0%;
   height: 2px;
   background: var(--neon);
-  width: 0;
-  transition: width 0.3s ease;
-  position: absolute;
   bottom: -4px;
   left: 0;
+  transition: width 0.3s ease;
 }
+
 nav a:hover::after {
   width: 100%;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem 0;
-  background: rgba(0,0,0,0.8);
-  margin-top: 4rem;
-}
-
-/* Product List Cards */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 0 2rem;
 }
+
 .product-card {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.7);
   border: 2px solid var(--neon);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
   position: relative;
 }
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 2rem var(--neon);
+
+.product-card img {
+  width: 100%;
+  height: auto;
 }
 
-/* Buttons */
-button {
-  background: var(--bg-gradient);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-button:hover {
-  transform: scale(1.1);
+.product-card .info {
+  padding: 1rem;
 }
 
-/* Glitch Text Effect */
-.glitch {
-  position: relative;
-  color: var(--neon);
-  font-size: 2rem;
-  animation: glitch 1s infinite;
+.product-card .info h3 {
+  margin: 0 0 0.5rem;
 }
-.glitch::before, .glitch::after {
-  content: attr(data-text);
+
+.product-card .info p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.product-card .overlay {
   position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
-}
-.glitch::before {
-  top: -2px;
-  color: var(--neon-dark);
-}
-.glitch::after {
-  top: 2px;
-  color: var(--neon);
-  mix-blend-mode: multiply;
-}
-@keyframes glitch {
-  0%, 20%, 40%, 60%, 80%, 100% { clip-path: inset(0 0 0 0); }
-  10% { clip-path: inset(10% 0 85% 0); }
-  30% { clip-path: inset(85% 0 10% 0); }
-  50% { clip-path: inset(10% 0 85% 0); }
-  70% { clip-path: inset(85% 0 10% 0); }
-  90% { clip-path: inset(10% 0 85% 0); }
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Utility */
+.product-card:hover .overlay {
+  opacity: 1;
+}
+
+.product-card .overlay a.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #111;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid var(--neon);
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Utility classes */
 .container {
   max-width: 1200px;
-  margin: auto;
-  padding: 0 1rem;
+  margin: 0 auto;
 }
