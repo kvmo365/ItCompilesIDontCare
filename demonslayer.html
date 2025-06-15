@@ -73,7 +73,8 @@
     document.addEventListener("DOMContentLoaded", () => {
       const list = document.getElementById("product-list");
 
-      fetch("/api/products")
+      fetch('data/products.json')
+
         .then((res) => res.json())
         .then((products) => {
           const nichirinProducts = products.filter(p => p.category === "Nichirin Blades");
