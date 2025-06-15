@@ -1,51 +1,33 @@
-// main.js
 
-// Load and display products from JSON
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://itcompilesidontcare-backend.onrender.com/api/products")
-    .then(response => response.json())
-    .then(data => displayProducts(data))
-    .catch(error => console.error("Error loading products:", error));
-});
+fetch('data/products.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(products => {
+    displayProducts(products);
+  })
+  .catch(error => {
+    console.error('Error loading products:', error);
+  });
 
-function displayProducts(data) {
-  const container = document.getElementById("products-container");
-
-  data.forEach(category => {
-    // Create category section
-    const categorySection = document.createElement("section");
-    categorySection.classList.add("category-section");
-
-    const categoryTitle = document.createElement("h2");
-    categoryTitle.textContent = category.category;
-    categorySection.appendChild(categoryTitle);
-
-    const productsGrid = document.createElement("div");
-    productsGrid.classList.add("products-grid");
-
-    // Loop through products in the category
-    category.products.forEach(product => {
-      const productCard = document.createElement("div");
-      productCard.classList.add("product-card");
-
-      const img = document.createElement("img");
-      img.src = product.image;
-      img.alt = product.name;
-
-      const name = document.createElement("h3");
-      name.textContent = product.name;
-
-      const description = document.createElement("p");
-      description.textContent = product.description;
-
-      productCard.appendChild(img);
-      productCard.appendChild(name);
-      productCard.appendChild(description);
-
-      productsGrid.appendChild(productCard);
-    });
-
-    categorySection.appendChild(productsGrid);
-    container.appendChild(categorySection);
+function displayProducts(products) {
+  const container = document.getElementById('product-container');
+  if (!products || !Array.isArray(products)) {
+    console.error("Invalid products format");
+    return;
+  }
+  products.forEach(product => {
+    const productDiv = document.createElement('div');
+    productDiv.className = 'product';
+    productDiv.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" />
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <p>Price: $${product.price}</p>
+    `;
+    container.appendChild(productDiv);
   });
 }

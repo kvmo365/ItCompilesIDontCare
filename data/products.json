@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Naruto Uzumaki Action Figure",
+    "description": "Highly detailed Naruto figure with interchangeable faces.",
+    "price": 39.99,
+    "image": "images/anime1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Demon Slayer Nichirin Sword",
+    "description": "Replica sword from Demon Slayer, made with foam for safety.",
+    "price": 49.99,
+    "image": "images/anime2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Attack on Titan Jacket",
+    "description": "Survey Corps military-style jacket for cosplay or fashion.",
+    "price": 59.99,
+    "image": "images/anime3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Luffy's Straw Hat",
+    "description": "Iconic straw hat worn by Luffy from One Piece.",
+    "price": 19.99,
+    "image": "images/anime4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Itachi Uchiha Sharingan Eyes Poster",
+    "description": "HD poster of Itachi with his Mangekyou Sharingan activated.",
+    "price": 14.99,
+    "image": "images/anime5.jpg"
+  }
+]
