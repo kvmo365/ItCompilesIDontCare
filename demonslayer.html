@@ -1,13 +1,80 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <link rel="icon" href="favicon.ico" />
   <meta charset="UTF-8">
   <title>Nichirin Blades - Demon Slayer</title>
   <link rel="stylesheet" href="css/style.css" />
-  
+  <style>
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .product-card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid var(--neon);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 25px var(--neon);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--neon);
+      margin: 15px 0;
+      box-shadow: 0 0 12px var(--neon);
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product-card button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: var(--bg-gradient);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px var(--neon);
+    }
+
+    .product-card button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px var(--neon), 0 0 30px var(--neon) inset;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2.5rem;
+      color: var(--neon);
+      text-shadow: 0 0 10px var(--neon);
+    }
+  </style>
 </head>
+
 <body>
+  <nav class="container">
+    <a href="index.html" class="glitch" data-text="Home">Home</a>
+    <a href="highcards.html" class="glitch" data-text="High Cards">High Cards</a>
+    <a href="tabootattoo.html" class="glitch" data-text="Taboo Tattoo">Taboo Tattoo</a>
+    <a href="devilfruit.html" class="glitch" data-text="Devil Fruit">Devil Fruit</a>
+    <a href="tailedbeasts.html" class="glitch" data-text="Tailed Beasts">Tailed Beasts</a>
+    <a href="sayan.html" class="glitch" data-text="Saiyan">Saiyan</a>
+    <a href="zanpaktuo.html" class="glitch" data-text="Zanpaktuo">Zanpaktuo</a>
+    <a href="demonslayer.html" class="glitch" data-text="Nichirin">Nichirin</a>
+    <a href="titans.html" class="glitch" data-text="Titans">Titans</a>
+  </nav>
+
 
   <h1>Nichirin Blades Collection</h1>
 
@@ -19,11 +86,18 @@
     document.addEventListener("DOMContentLoaded", () => {
       const list = document.getElementById("product-list");
 
-      fetch('data/products.json')
-
-        .then((res) => res.json())
+      fetch("data/products.json") // 👈 fixed path
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to fetch products");
+          return res.json();
+        })
         .then((products) => {
           const nichirinProducts = products.filter(p => p.category === "Nichirin Blades");
+
+          if (nichirinProducts.length === 0) {
+            list.innerHTML = "<p>No products found in this category.</p>";
+            return;
+          }
 
           nichirinProducts.forEach((p) => {
             const card = document.createElement("div");
@@ -36,10 +110,6 @@
             `;
             list.appendChild(card);
           });
-
-          if (nichirinProducts.length === 0) {
-            list.innerHTML = "<p>No products found in this category.</p>";
-          }
         })
         .catch((err) => {
           console.error("Failed to load products:", err);
@@ -49,10 +119,13 @@
 
     function addToCart(productId) {
       alert("Added to cart: " + productId);
-      // Optionally, add logic to update a cart or make API call
     }
   </script>
 
-<div id="product-container"></div>
+
+  <footer>
+    <p>&copy; 2025 Your Anime Store. All rights reserved.</p>
+  </footer>
 </body>
 </html>
+
