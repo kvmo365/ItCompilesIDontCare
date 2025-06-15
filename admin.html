@@ -1,55 +1,50 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <link rel="icon" href="favicon.ico" />
-  <meta charset="UTF-8">
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="favicon.ico" rel="icon"/>
+<meta charset="utf-8"/>
+<title>Admin Dashboard</title>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
     body { padding: 20px; font-family: Arial; }
     .product-form, .product-list { margin-bottom: 30px; }
     .product-item { margin-bottom: 10px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
     input, textarea { display: block; margin: 5px 0; width: 300px; }
   </style>
-  <div class="user-info">
-  <a href="login.html"><button>Login / Signup</button></a>
+<div class="user-info">
+<a href="login.html"><button>Login / Signup</button></a>
 </div>
-
 </head>
-
 <body>
-  <nav class="container">
-    <a href="index.html" class="glitch" data-text="Home">Home</a>
-    <a href="highcards.html" class="glitch" data-text="High Cards">High Cards</a>
-    <a href="tabootattoo.html" class="glitch" data-text="Taboo Tattoo">Taboo Tattoo</a>
-    <a href="devilfruit.html" class="glitch" data-text="Devil Fruit">Devil Fruit</a>
-    <a href="tailedbeasts.html" class="glitch" data-text="Tailed Beasts">Tailed Beasts</a>
-    <a href="sayan.html" class="glitch" data-text="Saiyan">Saiyan</a>
-    <a href="zanpaktuo.html" class="glitch" data-text="Zanpaktuo">Zanpaktuo</a>
-    <a href="demonslayer.html" class="glitch" data-text="Nichirin">Nichirin</a>
-    <a href="titans.html" class="glitch" data-text="Titans">Titans</a>
-  </nav>
-
-  <h1>Admin - Product Management</h1>
-
-  <section class="product-form">
-    <h2>Add New Product</h2>
-    <form id="addProductForm">
-      <input type="text" id="name" placeholder="Product Name" required />
-      <textarea id="description" placeholder="Description" required></textarea>
-      <input type="number" id="price" placeholder="Price" required />
-      <input type="text" id="image" placeholder="Image Path (e.g. /images/watch.jpg)" required />
-      <input type="number" id="stock" placeholder="Stock Quantity" required />
-      <button type="submit">Add Product</button>
-    </form>
-  </section>
-
-  <section class="product-list">
-    <h2>Product List</h2>
-    <div id="productList"></div>
-  </section>
-
-  <script>
+<nav class="container">
+<a class="glitch" data-text="Home" href="index.html">Home</a>
+<a class="glitch" data-text="High Cards" href="highcards.html">High Cards</a>
+<a class="glitch" data-text="Taboo Tattoo" href="tabootattoo.html">Taboo Tattoo</a>
+<a class="glitch" data-text="Devil Fruit" href="devilfruit.html">Devil Fruit</a>
+<a class="glitch" data-text="Tailed Beasts" href="tailedbeasts.html">Tailed Beasts</a>
+<a class="glitch" data-text="Saiyan" href="sayan.html">Saiyan</a>
+<a class="glitch" data-text="Zanpaktuo" href="zanpaktuo.html">Zanpaktuo</a>
+<a class="glitch" data-text="Nichirin" href="demonslayer.html">Nichirin</a>
+<a class="glitch" data-text="Titans" href="titans.html">Titans</a>
+</nav>
+<h1>Admin - Product Management</h1>
+<section class="product-form">
+<h2>Add New Product</h2>
+<form id="addProductForm">
+<input id="name" placeholder="Product Name" required="" type="text"/>
+<textarea id="description" placeholder="Description" required=""></textarea>
+<input id="price" placeholder="Price" required="" type="number"/>
+<input id="image" placeholder="Image Path (e.g. /images/watch.jpg)" required="" type="text"/>
+<input id="stock" placeholder="Stock Quantity" required="" type="number"/>
+<button type="submit">Add Product</button>
+</form>
+</section>
+<section class="product-list">
+<h2>Product List</h2>
+<div id="productList"></div>
+</section>
+<script>
     // Fetch and display products
     fetch('/api/products')
       .then(res => res.json())
@@ -92,10 +87,8 @@
     });
   </script>
 <div id="product-container"></div>
-
-  <footer>
-    <p>&copy; 2025 Your Anime Store. All rights reserved.</p>
-  </footer>
-</body>
+<footer>
+<p>© 2025 Your Anime Store. All rights reserved.</p>
+</footer>
+<script defer="True" src="script.js"></script></body>
 </html>
-

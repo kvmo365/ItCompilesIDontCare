@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Unlock Premium Categories</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta charset="utf-8"/>
+<title>Unlock Premium Categories</title>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
     body { font-family: Arial, sans-serif; background: #111; color: #eee; padding: 20px; }
     h1 { color: var(--neon); margin-bottom: 20px; }
     .plan {
@@ -34,76 +35,74 @@
       border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
   </style>
 </head>
-
 <body>
-  <nav class="container">
-    <a href="index.html" class="glitch" data-text="Home">Home</a>
-    <a href="highcards.html" class="glitch" data-text="High Cards">High Cards</a>
-    <a href="tabootattoo.html" class="glitch" data-text="Taboo Tattoo">Taboo Tattoo</a>
-    <a href="devilfruit.html" class="glitch" data-text="Devil Fruit">Devil Fruit</a>
-    <a href="tailedbeasts.html" class="glitch" data-text="Tailed Beasts">Tailed Beasts</a>
-    <a href="sayan.html" class="glitch" data-text="Saiyan">Saiyan</a>
-    <a href="zanpaktuo.html" class="glitch" data-text="Zanpaktuo">Zanpaktuo</a>
-    <a href="demonslayer.html" class="glitch" data-text="Nichirin">Nichirin</a>
-    <a href="titans.html" class="glitch" data-text="Titans">Titans</a>
-  </nav>
-
+<nav class="container">
+<a class="glitch" data-text="Home" href="index.html">Home</a>
+<a class="glitch" data-text="High Cards" href="highcards.html">High Cards</a>
+<a class="glitch" data-text="Taboo Tattoo" href="tabootattoo.html">Taboo Tattoo</a>
+<a class="glitch" data-text="Devil Fruit" href="devilfruit.html">Devil Fruit</a>
+<a class="glitch" data-text="Tailed Beasts" href="tailedbeasts.html">Tailed Beasts</a>
+<a class="glitch" data-text="Saiyan" href="sayan.html">Saiyan</a>
+<a class="glitch" data-text="Zanpaktuo" href="zanpaktuo.html">Zanpaktuo</a>
+<a class="glitch" data-text="Nichirin" href="demonslayer.html">Nichirin</a>
+<a class="glitch" data-text="Titans" href="titans.html">Titans</a>
+</nav>
 <h1>Choose Your Premium Plan</h1>
 <form id="unlockForm">
-  <!-- Plans -->
-  <div class="plan" data-plan="plan1">
-    <input type="radio" id="plan1" name="plan" value="plan1" hidden>
-    <h2>Plan 1: Apprentice Access — R1,200,000</h2>
-    <ul>
-      <li><strong>Unlocks:</strong> Taboo Tattoo</li>
-      <li><strong>Pros:</strong> Intro-level access</li>
-      <li><strong>Cons:</strong> Single category</li>
-    </ul>
-  </div>
-  <div class="plan" data-plan="plan2">
-    <input type="radio" id="plan2" name="plan" value="plan2" hidden>
-    <h2>Plan 2: Warrior Bundle — R3,500,000</h2>
-    <ul>
-      <li><strong>Unlocks:</strong> Taboo Tattoo, Tailed Beast, Sayan Transformation</li>
-      <li><strong>Pros:</strong> Multiple categories</li>
-      <li><strong>Cons:</strong> Excludes advanced categories</li>
-    </ul>
-  </div>
-  <div class="plan" data-plan="plan3">
-    <input type="radio" id="plan3" name="plan" value="plan3" hidden>
-    <h2>Plan 3: Legendary Collector — R7,800,000</h2>
-    <ul>
-      <li><strong>Unlocks:</strong> All except Titan Serums</li>
-      <li><strong>Pros:</strong> Extensive content</li>
-      <li><strong>Cons:</strong> High price</li>
-    </ul>
-  </div>
-  <div class="plan" data-plan="plan4">
-    <input type="radio" id="plan4" name="plan" value="plan4" hidden>
-    <h2>Plan 4: Ultimate Colossus — R15,000,000</h2>
-    <ul>
-      <li><strong>Unlocks:</strong> Every category</li>
-      <li><strong>Pros:</strong> Full access</li>
-      <li><strong>Cons:</strong> Premium cost</li>
-    </ul>
-  </div>
-  <!-- Continue to Payment -->
-  <button type="button" id="continueBtn">Continue to Payment</button>
-  <!-- Bank Details Form -->
-  <div id="bank-details">
-    <h2>Payment Details</h2>
-    <select id="bank-select" required>
-      <option value="">-- Select Bank --</option>
-      <option>Standard Bank</option>
-      <option>Capitec</option>
-      <option>Nedbank</option>
-      <option>ABSA</option>
-      <option>FNB</option>
-    </select>
-    <input type="text" id="account-number" placeholder="Account Number" maxlength="12" required />
-    <input type="text" id="security-code" placeholder="3-Digit Code" maxlength="3" required />
-    <button type="submit">Submit Payment</button>
-  </div>
+<!-- Plans -->
+<div class="plan" data-plan="plan1">
+<input hidden="" id="plan1" name="plan" type="radio" value="plan1"/>
+<h2>Plan 1: Apprentice Access — R1,200,000</h2>
+<ul>
+<li><strong>Unlocks:</strong> Taboo Tattoo</li>
+<li><strong>Pros:</strong> Intro-level access</li>
+<li><strong>Cons:</strong> Single category</li>
+</ul>
+</div>
+<div class="plan" data-plan="plan2">
+<input hidden="" id="plan2" name="plan" type="radio" value="plan2"/>
+<h2>Plan 2: Warrior Bundle — R3,500,000</h2>
+<ul>
+<li><strong>Unlocks:</strong> Taboo Tattoo, Tailed Beast, Sayan Transformation</li>
+<li><strong>Pros:</strong> Multiple categories</li>
+<li><strong>Cons:</strong> Excludes advanced categories</li>
+</ul>
+</div>
+<div class="plan" data-plan="plan3">
+<input hidden="" id="plan3" name="plan" type="radio" value="plan3"/>
+<h2>Plan 3: Legendary Collector — R7,800,000</h2>
+<ul>
+<li><strong>Unlocks:</strong> All except Titan Serums</li>
+<li><strong>Pros:</strong> Extensive content</li>
+<li><strong>Cons:</strong> High price</li>
+</ul>
+</div>
+<div class="plan" data-plan="plan4">
+<input hidden="" id="plan4" name="plan" type="radio" value="plan4"/>
+<h2>Plan 4: Ultimate Colossus — R15,000,000</h2>
+<ul>
+<li><strong>Unlocks:</strong> Every category</li>
+<li><strong>Pros:</strong> Full access</li>
+<li><strong>Cons:</strong> Premium cost</li>
+</ul>
+</div>
+<!-- Continue to Payment -->
+<button id="continueBtn" type="button">Continue to Payment</button>
+<!-- Bank Details Form -->
+<div id="bank-details">
+<h2>Payment Details</h2>
+<select id="bank-select" required="">
+<option value="">-- Select Bank --</option>
+<option>Standard Bank</option>
+<option>Capitec</option>
+<option>Nedbank</option>
+<option>ABSA</option>
+<option>FNB</option>
+</select>
+<input id="account-number" maxlength="12" placeholder="Account Number" required="" type="text">
+<input id="security-code" maxlength="3" placeholder="3-Digit Code" required="" type="text">
+<button type="submit">Submit Payment</button>
+</input></input></div>
 </form>
 <script>
   // Plan selection and highlight
@@ -133,10 +132,8 @@
   });
 </script>
 <div id="product-container"></div>
-
-  <footer>
-    <p>&copy; 2025 Your Anime Store. All rights reserved.</p>
-  </footer>
-</body>
+<footer>
+<p>© 2025 Your Anime Store. All rights reserved.</p>
+</footer>
+<script defer="True" src="script.js"></script></body>
 </html>
-

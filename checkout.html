@@ -1,58 +1,51 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <link rel="icon" href="favicon.ico" />
-  <meta charset="UTF-8" />
-  <title>Checkout</title>
-  <link rel="stylesheet" href="css/style.css" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="favicon.ico" rel="icon"/>
+<meta charset="utf-8"/>
+<title>Checkout</title>
+<link href="css/style.css" rel="stylesheet"/>
 <div class="user-info">
-  <a href="login.html"><button>Login / Signup</button></a>
+<a href="login.html"><button>Login / Signup</button></a>
 </div>
-
 </head>
-
 <body>
-  <nav class="container">
-    <a href="index.html" class="glitch" data-text="Home">Home</a>
-    <a href="highcards.html" class="glitch" data-text="High Cards">High Cards</a>
-    <a href="tabootattoo.html" class="glitch" data-text="Taboo Tattoo">Taboo Tattoo</a>
-    <a href="devilfruit.html" class="glitch" data-text="Devil Fruit">Devil Fruit</a>
-    <a href="tailedbeasts.html" class="glitch" data-text="Tailed Beasts">Tailed Beasts</a>
-    <a href="sayan.html" class="glitch" data-text="Saiyan">Saiyan</a>
-    <a href="zanpaktuo.html" class="glitch" data-text="Zanpaktuo">Zanpaktuo</a>
-    <a href="demonslayer.html" class="glitch" data-text="Nichirin">Nichirin</a>
-    <a href="titans.html" class="glitch" data-text="Titans">Titans</a>
-  </nav>
-
-  <div class="checkout-container">
-    <h1>Checkout</h1>
-
-    <div class="order-summary" id="orderSummary">
-      <h2>Order Summary</h2>
-      <ul id="summaryItems"></ul>
-      <p><strong>Total: R<span id="totalPrice">0.00</span></strong></p>
-    </div>
-
-    <h2>Shipping Information</h2>
-    <form id="checkoutForm">
-      <input type="text" name="fullName" placeholder="Full Name" required />
-      <input type="text" name="address" placeholder="Address" required />
-      <input type="text" name="city" placeholder="City" required />
-      <input type="text" name="postalCode" placeholder="Postal Code" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-
-      <h2>Payment Method</h2>
-      <select name="paymentMethod" required>
-        <option value="">Select payment method</option>
-        <option value="card">Credit/Debit Card</option>
-        <option value="cod">Cash on Delivery</option>
-      </select>
-
-      <button type="submit" class="btn">Place Order</button>
-    </form>
-  </div>
-
-  <script>
+<nav class="container">
+<a class="glitch" data-text="Home" href="index.html">Home</a>
+<a class="glitch" data-text="High Cards" href="highcards.html">High Cards</a>
+<a class="glitch" data-text="Taboo Tattoo" href="tabootattoo.html">Taboo Tattoo</a>
+<a class="glitch" data-text="Devil Fruit" href="devilfruit.html">Devil Fruit</a>
+<a class="glitch" data-text="Tailed Beasts" href="tailedbeasts.html">Tailed Beasts</a>
+<a class="glitch" data-text="Saiyan" href="sayan.html">Saiyan</a>
+<a class="glitch" data-text="Zanpaktuo" href="zanpaktuo.html">Zanpaktuo</a>
+<a class="glitch" data-text="Nichirin" href="demonslayer.html">Nichirin</a>
+<a class="glitch" data-text="Titans" href="titans.html">Titans</a>
+</nav>
+<div class="checkout-container">
+<h1>Checkout</h1>
+<div class="order-summary" id="orderSummary">
+<h2>Order Summary</h2>
+<ul id="summaryItems"></ul>
+<p><strong>Total: R<span id="totalPrice">0.00</span></strong></p>
+</div>
+<h2>Shipping Information</h2>
+<form id="checkoutForm">
+<input name="fullName" placeholder="Full Name" required="" type="text"/>
+<input name="address" placeholder="Address" required="" type="text"/>
+<input name="city" placeholder="City" required="" type="text"/>
+<input name="postalCode" placeholder="Postal Code" required="" type="text"/>
+<input name="phone" placeholder="Phone Number" required="" type="tel"/>
+<h2>Payment Method</h2>
+<select name="paymentMethod" required="">
+<option value="">Select payment method</option>
+<option value="card">Credit/Debit Card</option>
+<option value="cod">Cash on Delivery</option>
+</select>
+<button class="btn" type="submit">Place Order</button>
+</form>
+</div>
+<script>
     // Load cart from localStorage
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const summary = document.getElementById('summaryItems');
@@ -105,11 +98,9 @@
       }
     });
   </script>
-  <div id="product-container"></div>
-
-  <footer>
-    <p>&copy; 2025 Your Anime Store. All rights reserved.</p>
-  </footer>
-</body>
+<div id="product-container"></div>
+<footer>
+<p>© 2025 Your Anime Store. All rights reserved.</p>
+</footer>
+<script defer="True" src="script.js"></script></body>
 </html>
-

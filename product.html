@@ -1,43 +1,38 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <link rel="icon" href="favicon.ico" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Products</title>
-  <link rel="stylesheet" href="css/style.css" />
+<link href="favicon.ico" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>All Products</title>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <nav class="container">
-    <a href="index.html" class="glitch" data-text="Home">Home</a>
-    <a href="highcards.html" class="glitch" data-text="High Cards">High Cards</a>
-    <a href="tabootattoo.html" class="glitch" data-text="Taboo Tattoo">Taboo Tattoo</a>
-    <a href="devilfruit.html" class="glitch" data-text="Devil Fruit">Devil Fruit</a>
-    <a href="tailedbeasts.html" class="glitch" data-text="Tailed Beasts">Tailed Beasts</a>
-    <a href="sayan.html" class="glitch" data-text="Saiyan">Saiyan</a>
-    <a href="zanpaktuo.html" class="glitch" data-text="Zanpaktuo">Zanpaktuo</a>
-    <a href="demonslayer.html" class="glitch" data-text="Nichirin">Nichirin</a>
-    <a href="titans.html" class="glitch" data-text="Titans">Titans</a>
-  </nav>
-
-
-  <header>
-    <h1>All Products</h1>
-    <div class="user-info">
-      <img src="images/user.png" alt="User" />
-    </div>
-  </header>
-
-  <main id="products-container">
-    <!-- Products will be dynamically inserted here -->
-  </main>
-
-  <footer>
-    &copy; 2025 CyberStore. All rights reserved.
+<nav class="container">
+<a class="glitch" data-text="Home" href="index.html">Home</a>
+<a class="glitch" data-text="High Cards" href="highcards.html">High Cards</a>
+<a class="glitch" data-text="Taboo Tattoo" href="tabootattoo.html">Taboo Tattoo</a>
+<a class="glitch" data-text="Devil Fruit" href="devilfruit.html">Devil Fruit</a>
+<a class="glitch" data-text="Tailed Beasts" href="tailedbeasts.html">Tailed Beasts</a>
+<a class="glitch" data-text="Saiyan" href="sayan.html">Saiyan</a>
+<a class="glitch" data-text="Zanpaktuo" href="zanpaktuo.html">Zanpaktuo</a>
+<a class="glitch" data-text="Nichirin" href="demonslayer.html">Nichirin</a>
+<a class="glitch" data-text="Titans" href="titans.html">Titans</a>
+</nav>
+<header>
+<h1>All Products</h1>
+<div class="user-info">
+<img alt="User" src="images/user.png"/>
+</div>
+</header>
+<main id="products-container">
+<!-- Products will be dynamically inserted here -->
+</main>
+<footer>
+    © 2025 CyberStore. All rights reserved.
   </footer>
-
-  <script>
+<script>
     async function loadProducts() {
       try {
         // Fetch products from backend API route
@@ -104,7 +99,6 @@
     // Load products on page load
     window.addEventListener('DOMContentLoaded', loadProducts);
   </script>
-
-  <div id="product-container"></div>
-</body>
+<div id="product-container"></div>
+<script defer="True" src="script.js"></script></body>
 </html>

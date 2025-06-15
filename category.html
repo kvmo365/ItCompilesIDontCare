@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="favicon.ico" />
-  <title>Hologram Categories</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta charset="utf-8"/>
+<link href="favicon.ico" rel="icon"/>
+<title>Hologram Categories</title>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
     .category-card.locked {
       position: relative;
       filter: blur(2px);
@@ -33,69 +34,65 @@
     }
   </style>
 </head>
-
 <body>
-  <nav class="container">
-    <a href="index.html" class="glitch" data-text="Home">Home</a>
-    <a href="highcards.html" class="glitch" data-text="High Cards">High Cards</a>
-    <a href="tabootattoo.html" class="glitch" data-text="Taboo Tattoo">Taboo Tattoo</a>
-    <a href="devilfruit.html" class="glitch" data-text="Devil Fruit">Devil Fruit</a>
-    <a href="tailedbeasts.html" class="glitch" data-text="Tailed Beasts">Tailed Beasts</a>
-    <a href="sayan.html" class="glitch" data-text="Saiyan">Saiyan</a>
-    <a href="zanpaktuo.html" class="glitch" data-text="Zanpaktuo">Zanpaktuo</a>
-    <a href="demonslayer.html" class="glitch" data-text="Nichirin">Nichirin</a>
-    <a href="titans.html" class="glitch" data-text="Titans">Titans</a>
-  </nav>
-
-  <header>Choose Your Category</header>
-
-  <div class="category-wrapper">
-    <button class="nav-button nav-left" onclick="scrollCategories(-1)">&lt;</button>
-    <div class="category-slider" id="categorySlider">
-      <!-- Taboo Tattoo (locked) -->
-      <a href="tabootattoo.html" class="category-card locked">
-        <img src="images/tatto tabo.jpg" alt="Taboo Tattoo" />
-        <div class="category-name">Taboo Tattoo</div>
-        <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
-      </a>
-      <!-- Devil Fruit (unlocked) -->
-      <a href="devilfruits.html" class="category-card">
-        <img src="images/devil fruit.jpg" alt="Devil Fruit" />
-        <div class="category-name">Devil Fruit</div>
-      </a>
-      <!-- Tailed Beast (locked) -->
-      <a href="tailedbeasts.html" class="category-card locked">
-        <img src="images/tailed beast.jpg" alt="Tailed Beast" />
-        <div class="category-name">Tailed Beast</div>
-        <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
-      </a>
-      <!-- Sayan Transformation (locked) -->
-      <a href="saiyan.html" class="category-card locked">
-        <img src="images/syrum.jpg" alt="Sayan Transformation" />
-        <div class="category-name">Sayan Transformation</div>
-        <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
-      </a>
-      <!-- Zanpaktuo (locked) -->
-      <a href="zanpakuto.html" class="category-card locked">
-        <img src="images/zanpaktoe.jpg" alt="Zanpaktuo" />
-        <div class="category-name">Zanpaktuo</div>
-        <button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
-      </a>
-      <!-- Nichirin Blades (unlocked) -->
-      <a href="demonslayer.html" class="category-card">
-        <img src="images/nichirin swords.jpg" alt="Nichirin Blades" />
-        <div class="category-name">Nichirin Blades</div>
-      </a>
-      <!-- Titan Serums (unlocked) -->
-      <a href="titans.html" class="category-card">
-        <img src="images/titain syrum.jpg" alt="Titan Serums" />
-        <div class="category-name">Titan Serums</div>
-      </a>
-    </div>
-    <button class="nav-button nav-right" onclick="scrollCategories(1)">&gt;</button>
-  </div>
-
-  <script>
+<nav class="container">
+<a class="glitch" data-text="Home" href="index.html">Home</a>
+<a class="glitch" data-text="High Cards" href="highcards.html">High Cards</a>
+<a class="glitch" data-text="Taboo Tattoo" href="tabootattoo.html">Taboo Tattoo</a>
+<a class="glitch" data-text="Devil Fruit" href="devilfruit.html">Devil Fruit</a>
+<a class="glitch" data-text="Tailed Beasts" href="tailedbeasts.html">Tailed Beasts</a>
+<a class="glitch" data-text="Saiyan" href="sayan.html">Saiyan</a>
+<a class="glitch" data-text="Zanpaktuo" href="zanpaktuo.html">Zanpaktuo</a>
+<a class="glitch" data-text="Nichirin" href="demonslayer.html">Nichirin</a>
+<a class="glitch" data-text="Titans" href="titans.html">Titans</a>
+</nav>
+<header>Choose Your Category</header>
+<div class="category-wrapper">
+<button class="nav-button nav-left" onclick="scrollCategories(-1)">&lt;</button>
+<div class="category-slider" id="categorySlider">
+<!-- Taboo Tattoo (locked) -->
+<a class="category-card locked" href="tabootattoo.html">
+<img alt="Taboo Tattoo" src="images/tatto tabo.jpg"/>
+<div class="category-name">Taboo Tattoo</div>
+<button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
+</a>
+<!-- Devil Fruit (unlocked) -->
+<a class="category-card" href="devilfruits.html">
+<img alt="Devil Fruit" src="images/devil fruit.jpg"/>
+<div class="category-name">Devil Fruit</div>
+</a>
+<!-- Tailed Beast (locked) -->
+<a class="category-card locked" href="tailedbeasts.html">
+<img alt="Tailed Beast" src="images/tailed beast.jpg"/>
+<div class="category-name">Tailed Beast</div>
+<button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
+</a>
+<!-- Sayan Transformation (locked) -->
+<a class="category-card locked" href="saiyan.html">
+<img alt="Sayan Transformation" src="images/syrum.jpg"/>
+<div class="category-name">Sayan Transformation</div>
+<button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
+</a>
+<!-- Zanpaktuo (locked) -->
+<a class="category-card locked" href="zanpakuto.html">
+<img alt="Zanpaktuo" src="images/zanpaktoe.jpg"/>
+<div class="category-name">Zanpaktuo</div>
+<button class="locked-button" onclick="window.location.href='locked.html'; return false;">🔒 Locked</button>
+</a>
+<!-- Nichirin Blades (unlocked) -->
+<a class="category-card" href="demonslayer.html">
+<img alt="Nichirin Blades" src="images/nichirin swords.jpg"/>
+<div class="category-name">Nichirin Blades</div>
+</a>
+<!-- Titan Serums (unlocked) -->
+<a class="category-card" href="titans.html">
+<img alt="Titan Serums" src="images/titain syrum.jpg"/>
+<div class="category-name">Titan Serums</div>
+</a>
+</div>
+<button class="nav-button nav-right" onclick="scrollCategories(1)">&gt;</button>
+</div>
+<script>
     let scrollIndex = 0;
     const slider = document.getElementById('categorySlider');
     const cards = slider.children;
@@ -128,10 +125,8 @@
     updateCardTransform();
   </script>
 <div id="product-container"></div>
-
-  <footer>
-    <p>&copy; 2025 Your Anime Store. All rights reserved.</p>
-  </footer>
-</body>
+<footer>
+<p>© 2025 Your Anime Store. All rights reserved.</p>
+</footer>
+<script defer="True" src="script.js"></script></body>
 </html>
-
