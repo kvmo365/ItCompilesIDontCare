@@ -3,28 +3,28 @@
     "id": "p001",
     "name": "Neon Serum Titan",
     "price": 199.99,
-    "image": "images/neon_serum.jpg",
+    "image": "images\titain syrums\titain syrums 2.jpg",
     "category": "Titan"
   },
   {
     "id": "p002",
     "name": "Devil Fruit Elixir",
     "price": 149.99,
-    "image": "images/devil_fruit.jpg",
+    "image": "images/devilfruit/devilfruit 1.png",
     "category": "Devil Fruits"
   },
   {
     "id": "p003",
     "name": "Power Boost Capsule",
     "price": 99.99,
-    "image": "images/power_boost.jpg",
+    "image": "images/Power Boost Capsule.jpg",
     "category": "Supplements"
   },
   {
     "id": "p004",
     "name": "Energy Wave Drink",
     "price": 49.99,
-    "image": "images/energy_wave.jpg",
+    "image": "images/Energy Wave Drink.jpg",
     "category": "Drinks"
   }
 ]
