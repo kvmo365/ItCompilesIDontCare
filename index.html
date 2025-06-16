@@ -1,92 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyAnimeVault</title>
- <link href="css/style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-
-  <!-- Overlay for dimming -->
-  <div id="overlay" class="overlay"></div>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container">
-      <h1 class="logo">MyAnimeVault</h1>
-      
-    </div>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
-
-  <!-- Mobile Side Menu -->
-  <nav id="sideMenu" class="side-menu" aria-hidden="true">
-    <button id="closeMenu" class="close-button" aria-label="Close menu">✕</button>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="category.html">Categories</a></li>
-      <li><a href="#">Deals</a></li>
-      <li><a href="#" id="cart-link">Cart</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Content -->
-  <section class="hero">
-    <div class="container">
-      <h2>Welcome to MyAnimeVault</h2>
-      <p>Discover rare anime-themed collectibles – from devil fruits and tattoos to limited-edition cards. Browse our 8 categories of exclusive, high-end merchandise crafted for true fans and collectors.</p>
-      <button class="primary-button" onclick="location.href='category.html'">Browse Categories</button>
-    </div>
-  </section>
-
-  <!-- Warning -->
-  <section class="warning">
-    <div class="container">
-      <h3>Important Warning</h3>
-      <p>By using this site, you agree that MyAnimeVault is not liable for misuse of our fictional products. Purchasers are responsible for how they use them.</p>
-    </div>
-  </section>
-
-  
-
-  <!-- JavaScript -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const closeBtn = document.getElementById('closeMenu');
-    const sideMenu = document.getElementById('sideMenu');
-    const overlay = document.getElementById('overlay');
-    const cartLink = document.getElementById('cart-link');
-
-    function openMenu() {
-      sideMenu.classList.add('open');
-      overlay.style.display = 'block';
-      sideMenu.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeMenu() {
-      sideMenu.classList.remove('open');
-      overlay.style.display = 'none';
-      sideMenu.setAttribute('aria-hidden', 'true');
-    }
-
-    function onCartClick(e) {
-      e.preventDefault();
-      alert('Please log in or sign up first.');
-      closeMenu();
-    }
-
-    hamburger.addEventListener('click', openMenu);
-    closeBtn.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
-    cartLink.addEventListener('click', onCartClick);
-  </script>
-  
-<!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 MyAnimeVault. All rights reserved.</p>
-    </div>
+  <main>
+    <h1>Welcome to MyAnimeVault</h1>
+    <p>Your ultimate source for anime merchandise.</p>
+  </main>
+  <footer>
+    <p>&copy; 2025 MyAnimeVault</p>
   </footer>
 </body>
 </html>

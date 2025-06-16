@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <script>
+    function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(name + " added to cart!");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Our Products</h1>
+    <div class="grid">
+      <div class="item">
+        <img src="images/naruto-figure.jpg" alt="Naruto Figure" />
+        <h3>Naruto Action Figure</h3>
+        <p>R250.00</p>
+        <button onclick="addToCart('Naruto Action Figure', 250)">Add to Cart</button>
+      </div>
+      <div class="item">
+        <img src="images/nezuko-poster.jpg" alt="Nezuko Poster" />
+        <h3>Nezuko Wall Poster</h3>
+        <p>R100.00</p>
+        <button onclick="addToCart('Nezuko Wall Poster', 100)">Add to Cart</button>
+      </div>
+      <div class="item">
+        <img src="images/luffy-keychain.jpg" alt="Luffy Keychain" />
+        <h3>Luffy Keychain</h3>
+        <p>R60.00</p>
+        <button onclick="addToCart('Luffy Keychain', 60)">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyAnimeVault</p>
+  </footer>
+</body>
+</html>
