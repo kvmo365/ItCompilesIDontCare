@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home - My Shop</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div id="header"></div>
+
   <main>
     <section class="hero">
       <h1>Welcome to My Shop</h1>
       <p>Your one-stop shop for premium serums, elixirs, and supplements.</p>
       <a class="btn" href="products.html">Shop Now</a>
     </section>
+
     <section class="featured">
       <h2>Featured Products</h2>
-      <div id="featured-list"></div>
+      <!-- Wrapped in grid container -->
+      <div id="featured-list" class="product-grid"></div>
     </section>
   </main>
+
   <div id="footer"></div>
+
   <script src="scripts/cart.js"></script>
   <script>
     // Load header and footer
-    fetch('includes/header.html').then(r=>r.text()).then(h=>document.getElementById('header').innerHTML=h);
-    fetch('includes/footer.html').then(r=>r.text()).then(h=>document.getElementById('footer').innerHTML=h);
+    fetch('includes/header.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('header').innerHTML = html);
+
+    fetch('includes/footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer').innerHTML = html);
 
     // Load featured products
     fetch('data/products.json')
-      .then(r=>r.json())
-      .then(data=>{
+      .then(res => res.json())
+      .then(data => {
         const featured = document.getElementById('featured-list');
-        data.slice(0,3).forEach(p=>{
+        data.slice(0, 3).forEach(p => {
           const card = document.createElement('div');
           card.className = 'product-card';
           card.innerHTML = `
             <img src="${p.image}" alt="${p.name}">
             <h3>${p.name}</h3>
             <p>R${p.price}</p>
-            <button onclick="addToCart(${JSON.stringify(p)})">Add to Cart</button>
+            <button onclick='addToCart(${JSON.stringify(p)})'>Add to Cart</button>
           `;
           featured.appendChild(card);
         });
