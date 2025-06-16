@@ -1,5 +1,7 @@
+/* === IMPORTS === */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
+/* === CSS VARIABLES === */
 :root {
   --neon: #0ff;
   --neon-dark: #00b8cc;
@@ -7,11 +9,21 @@
   --bg-radial: radial-gradient(ellipse at center, #0d0d0d 0%, #000000 100%);
 }
 
+/* === GLOBAL RESETS === */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: var(--bg-radial);
+  color: var(--neon);
+  overflow-x: hidden;
+  animation: pulseBg 20s ease-in-out infinite;
 }
 
-/* Apply glitch text-shadow animation to all text */
+/* === TEXT EFFECTS === */
 body * {
   animation: glitch 3s infinite;
 }
@@ -25,22 +37,13 @@ body * {
   100% { text-shadow: 2px 0 red, -2px 0 lime, 0 2px blue; }
 }
 
-body {
-  font-family: 'Orbitron', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: var(--bg-radial);
-  color: var(--neon);
-  overflow-x: hidden;
-  animation: pulseBg 20s ease-in-out infinite;
-  transition: background-color 0.3s;
-}
-
+/* === BACKGROUND PULSE === */
 @keyframes pulseBg {
   0%, 100% { background-color: #0d0d0d; }
   50% { background-color: #111; }
 }
 
+/* === HEADER === */
 header {
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
@@ -54,14 +57,11 @@ header {
   top: 0;
   z-index: 999;
 }
-
 header h1 {
-  margin: 0;
   font-size: 2.5rem;
   color: var(--neon);
   text-shadow: 0 0 20px var(--neon);
 }
-
 header .user-info img {
   width: 48px;
   height: 48px;
@@ -70,18 +70,15 @@ header .user-info img {
   box-shadow: 0 0 12px var(--neon);
 }
 
+/* === NAVIGATION === */
 nav {
   background: #000;
   display: none;
   animation: fadeIn 1s forwards;
 }
-
 nav ul {
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
-
 nav ul li a {
   display: block;
   padding: 20px;
@@ -91,13 +88,16 @@ nav ul li a {
   font-size: 1.2rem;
   transition: background 0.5s, padding-left 0.5s, color 0.5s;
 }
-
 nav ul li a:hover {
   background: var(--neon);
   color: #000;
   padding-left: 60px;
 }
+header.open + nav {
+  display: block;
+}
 
+/* === MAIN === */
 main {
   max-width: 1000px;
   margin: 60px auto;
@@ -109,12 +109,12 @@ main {
   animation: shimmer 8s linear infinite;
   background-size: 200% 100%;
 }
-
 @keyframes shimmer {
   0% { background-position: -1000px 0; }
   100% { background-position: 1000px 0; }
 }
 
+/* === FOOTER === */
 footer {
   background: rgba(0, 0, 0, 0.8);
   color: #aaa;
@@ -125,6 +125,7 @@ footer {
   box-shadow: 0 0 20px var(--neon) inset;
 }
 
+/* === BUTTONS === */
 button {
   background: var(--bg-gradient);
   color: black;
@@ -139,18 +140,17 @@ button {
   box-shadow: 0 0 15px var(--neon);
   transition: transform 0.3s ease;
 }
-
 @keyframes glowing {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 button:hover {
   transform: scale(1.08);
   box-shadow: 0 0 30px var(--neon), 0 0 40px var(--neon) inset;
 }
 
+/* === FORM INPUTS === */
 input, select {
   background: #111;
   border: 2px solid var(--neon);
@@ -164,11 +164,11 @@ input, select {
   outline: none;
   transition: box-shadow 0.3s;
 }
-
 input:focus, select:focus {
   box-shadow: 0 0 20px var(--neon);
 }
 
+/* === PRODUCT CARD === */
 .product-card {
   background: rgba(0, 0, 0, 0.6);
   border: 2px solid var(--neon);
@@ -179,19 +179,14 @@ input:focus, select:focus {
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .product-card:hover {
   transform: scale(1.03);
   box-shadow: 0 0 35px var(--neon), 0 0 45px var(--neon) inset;
 }
-
 .product-card::before {
   content: "";
   position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
   background: var(--bg-gradient);
   z-index: -1;
   filter: blur(15px);
@@ -199,6 +194,7 @@ input:focus, select:focus {
   border-radius: 16px;
 }
 
+/* === CART ITEM === */
 .cart-item {
   display: flex;
   justify-content: space-between;
@@ -207,12 +203,11 @@ input:focus, select:focus {
   padding-bottom: 12px;
 }
 
+/* === LOADING OVERLAY === */
 #loading-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: rgba(0,0,0,0.95);
   display: none;
   align-items: center;
@@ -224,18 +219,12 @@ input:focus, select:focus {
   animation: glowPulse 2s infinite;
   z-index: 99999;
 }
-
 @keyframes glowPulse {
   0%, 100% { text-shadow: 0 0 20px var(--neon); }
   50% { text-shadow: 0 0 50px var(--neon); }
 }
 
-header.open + nav {
-  display: block;
-}
-
-/* === CATEGORY SLIDER STYLES === */
-
+/* === CATEGORY SLIDER === */
 .category-wrapper {
   position: relative;
   max-width: 1000px;
@@ -243,7 +232,6 @@ header.open + nav {
   perspective: 1200px;
   overflow: hidden;
 }
-
 .category-slider {
   display: flex;
   gap: 40px;
@@ -251,7 +239,6 @@ header.open + nav {
   transition: transform 0.6s ease;
   padding: 20px;
 }
-
 .category-card {
   background: rgba(0, 255, 255, 0.08);
   border: 1px solid var(--neon);
@@ -266,7 +253,6 @@ header.open + nav {
   flex-shrink: 0;
   backdrop-filter: blur(8px);
 }
-
 .category-card img {
   width: 100%;
   height: 180px;
@@ -275,14 +261,12 @@ header.open + nav {
   border: 2px solid var(--neon);
   box-shadow: 0 0 12px var(--neon);
 }
-
 .category-name {
   margin-top: 15px;
   color: var(--neon);
   text-shadow: 0 0 10px var(--neon);
   font-weight: bold;
 }
-
 .nav-button {
   position: absolute;
   top: 50%;
@@ -299,12 +283,10 @@ header.open + nav {
   box-shadow: 0 0 20px var(--neon);
   transition: transform 0.2s ease;
 }
-
 .nav-button:hover {
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 0 35px var(--neon);
 }
-
 .nav-left { left: -10px; }
 .nav-right { right: -10px; }
 .category-section { margin-bottom: 60px; }
@@ -316,22 +298,28 @@ header.open + nav {
   text-align: center;
 }
 
-/* Ensure product-list displays in rows of three */
+/* === PRODUCT LIST GRID === */
 #product-list, .product-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 1rem;
 }
-/* Hamburger menu styles */
+
+/* === HAMBURGER & SIDE MENU === */
 .hamburger {
   font-size: 2rem;
   background: none;
   border: none;
+  color: white;
   cursor: pointer;
+  margin: 1rem;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
 }
-
-/* Side menu */
 .side-menu {
   position: fixed;
   top: 0;
@@ -347,21 +335,17 @@ header.open + nav {
 .side-menu.open {
   right: 0;
 }
-
 .side-menu ul {
   list-style: none;
   padding: 0;
 }
-
 .side-menu li {
   margin: 1rem 0;
 }
-
 .side-menu a {
   color: white;
   text-decoration: none;
 }
-
 .close-button {
   font-size: 1.5rem;
   background: none;
@@ -371,7 +355,7 @@ header.open + nav {
   cursor: pointer;
 }
 
-/* Overlay */
+/* === OVERLAY === */
 .overlay {
   position: fixed;
   top: 0; left: 0;
@@ -383,25 +367,12 @@ header.open + nav {
 .overlay.active {
   display: block;
 }
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  margin: 1rem;
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
 
+/* === MEDIA QUERIES === */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
-
   nav.container {
     display: none;
     flex-direction: column;
@@ -413,11 +384,9 @@ header.open + nav {
     padding: 1rem;
     z-index: 999;
   }
-
   nav.container.show-menu {
     display: flex;
   }
-
   nav.container a {
     margin: 10px 0;
   }
