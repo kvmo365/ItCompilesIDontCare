@@ -1,28 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyAnimeVault</title>
-  <link rel="stylesheet" href="css\style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - My Shop</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="categories.html">Categories</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div id="header"></div>
   <main>
-    <h1>Welcome to MyAnimeVault</h1>
-    <p>Your ultimate source for anime merchandise.</p>
+    <section class="hero">
+      <h1>Welcome to My Shop</h1>
+      <p>Your one-stop shop for premium serums, elixirs, and supplements.</p>
+      <a class="btn" href="products.html">Shop Now</a>
+    </section>
+    <section class="featured">
+      <h2>Featured Products</h2>
+      <div id="featured-list"></div>
+    </section>
   </main>
-  <footer>
-    <p>&copy; 2025 MyAnimeVault</p>
-  </footer>
+  <div id="footer"></div>
+  <script src="scripts/cart.js"></script>
+  <script>
+    // Load header and footer
+    fetch('includes/header.html').then(r=>r.text()).then(h=>document.getElementById('header').innerHTML=h);
+    fetch('includes/footer.html').then(r=>r.text()).then(h=>document.getElementById('footer').innerHTML=h);
+
+    // Load featured products
+    fetch('data/products.json')
+      .then(r=>r.json())
+      .then(data=>{
+        const featured = document.getElementById('featured-list');
+        data.slice(0,3).forEach(p=>{
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          card.innerHTML = `
+            <img src="${p.image}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p>R${p.price}</p>
+            <button onclick="addToCart(${JSON.stringify(p)})">Add to Cart</button>
+          `;
+          featured.appendChild(card);
+        });
+      });
+  </script>
 </body>
 </html>

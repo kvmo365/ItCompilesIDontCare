@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout</title>
+  <title>Cart</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Include header -->
   <div id="header"></div>
   <main>
-    <h1>Checkout</h1>
-    <form>
-      <label>Name: <input type="text" required /></label><br/>
-      <label>Address: <textarea required></textarea></label><br/>
-      <label>Payment Details: <input type="text" required /></label><br/>
-      <button type="submit">Place Order</button>
-    </form>
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <h3>Total: <span id="cart-total">R0.00</span></h3>
+    <button onclick="location.href='checkout.html'">Checkout</button>
+    <button onclick="clearCart()">Clear Cart</button>
   </main>
+  <!-- Include footer -->
   <div id="footer"></div>
+  <script src="scripts/cart.js"></script>
   <script>
+    // Load header and footer
     fetch('includes/header.html').then(res => res.text()).then(html => document.getElementById('header').innerHTML = html);
     fetch('includes/footer.html').then(res => res.text()).then(html => document.getElementById('footer').innerHTML = html);
   </script>

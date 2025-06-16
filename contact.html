@@ -1,17 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact</title>
-  <link rel="stylesheet" href="css\style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - My Shop</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header><a href="index.html">← Back to Home</a></header>
+  <div id="header"></div>
   <main>
     <h1>Contact Us</h1>
-    <p>Email: info@myanimevault.com</p>
+    <form>
+      <label>Name:<input type="text" required></label><br>
+      <label>Email:<input type="email" required></label><br>
+      <label>Message:<textarea required></textarea></label><br>
+      <button type="submit">Send Message</button>
+    </form>
   </main>
+  <div id="footer"></div>
+  <script>
+    fetch('includes/header.html').then(r=>r.text()).then(h=>document.getElementById('header').innerHTML=h);
+    fetch('includes/footer.html').then(r=>r.text()).then(html=>document.getElementById('footer').innerHTML=html);
+  </script>
 </body>
 </html>
