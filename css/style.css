@@ -323,3 +323,102 @@ header.open + nav {
   gap: 1.5rem;
   padding: 1rem;
 }
+/* Hamburger menu styles */
+.hamburger {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Side menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: #111;
+  color: white;
+  padding: 1rem;
+  transition: right 0.3s ease;
+  z-index: 1001;
+}
+.side-menu.open {
+  right: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  margin: 1rem 0;
+}
+
+.side-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.close-button {
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  border: none;
+  float: right;
+  cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: none;
+}
+.overlay.active {
+  display: block;
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin: 1rem;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav.container {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 999;
+  }
+
+  nav.container.show-menu {
+    display: flex;
+  }
+
+  nav.container a {
+    margin: 10px 0;
+  }
+}
