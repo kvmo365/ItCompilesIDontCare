@@ -89,6 +89,10 @@ main, section {
   max-width: 1200px;
 }
 
+section {
+  margin-bottom: 60px;
+}
+
 /* Buttons */
 .btn {
   background: var(--accent-color);
@@ -126,7 +130,7 @@ main, section {
   box-shadow: 0 0 20px var(--accent-color);
 }
 
-/* Inputs, Selects, Textareas */
+/* Form Inputs */
 input, select, textarea {
   background: rgba(255, 255, 255, 0.05);
   color: var(--white);
@@ -154,6 +158,21 @@ input:focus, select:focus, textarea:focus {
   padding: 30px;
   font-size: 0.9em;
   box-shadow: 0 -2px 20px #000;
+}
+
+/* Universal Image Styling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
 }
 
 /* Animations */
