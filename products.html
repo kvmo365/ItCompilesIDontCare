@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Products</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <div id="header"></div>
+  <!-- HEADER (with cart icon) -->
+  <header>
+    <nav class="site-nav">
+      <div class="logo">
+        <a href="index.html">My Shop</a>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="cart-icon">
+        <a href="cart.html" title="View Cart">
+          <img src="images\cart.svg" alt="Cart" width="24" height="24"/>
+        </a>
+      </div>
+    </nav>
+  </header>
+
   <main>
     <h1>Products</h1>
     <div id="product-list"></div>
   </main>
+
+  <!-- FOOTER -->
   <div id="footer"></div>
+
   <script src="scripts/cart.js"></script>
   <script>
-    fetch('includes/header.html').then(res => res.text()).then(html => document.getElementById('header').innerHTML = html);
-    fetch('includes/footer.html').then(res => res.text()).then(html => document.getElementById('footer').innerHTML = html);
+    // Load footer include
+    fetch('includes/footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer').innerHTML = html);
 
     // Load products
     fetch('data/products.json')
@@ -29,12 +54,13 @@
           card.innerHTML = `
             <img src="${p.image}" alt="${p.name}" />
             <h2 id="product-name">${p.name}</h2>
-            <p id="product-price">${p.price}</p>
+            <p id="product-price">R${p.price.toFixed(2)}</p>
             <button id="add-to-cart">Add to Cart</button>
             <input type="hidden" id="product-id" value="${p.id}" />
           `;
           container.appendChild(card);
-          card.querySelector('button').addEventListener('click', () => addToCart(p));
+          card.querySelector('button')
+              .addEventListener('click', () => addToCart(p));
         });
       });
   </script>
